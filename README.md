@@ -76,10 +76,10 @@ WORKDIR /app
 
 RUN apt-get update && apt-get install -y \
     build-essential \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/*  # removes package cache from apt-get install and saves 50-100 MB
 
 # Install pandas from pre-compiled wheels only
-RUN pip install --only-binary=all pandas
+RUN pip install --only-binary=all pandas   # you can do also pip install but takes longer tile compare to wheels that has precompiled componenets of pands
 
 CMD ["/bin/bash"]
 ```
