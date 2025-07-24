@@ -182,8 +182,8 @@ RUN apt-get update && apt-get install -y \
 RUN pip install --only-binary=all pandas
 
 # Copy your Python script and data into the container
-COPY read_csv.py .
-COPY sample_data.csv .
+COPY read_csv.py .   # file ends up to app/read_csv.py
+COPY sample_data.csv . # same for this file
 
 # Default command now runs your script
 CMD ["python", "read_csv.py"]
