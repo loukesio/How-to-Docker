@@ -295,6 +295,8 @@ docker run pandas-flexible
 
 # Run with your own CSV file (mount external directory)
 docker run -v /path/to/your/data:/app/data pandas-flexible python flexible_csv_reader.py data/your_file.csv
+#docker run -v [YOUR_FOLDER]:[CONTAINER_FOLDER] [IMAGE_NAME] [COMMAND_TO_RUN]
+
 
 # Run interactively to explore your data
 docker run -it -v $(pwd):/app/data pandas-flexible /bin/bash
